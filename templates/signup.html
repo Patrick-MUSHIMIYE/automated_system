@@ -1,0 +1,80 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Use Authentication</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="signcontainer">
+    <div class="subcontainer">
+      <div class="cont">
+        <h3>Sign up</h3>
+        <form method="post" novalidate >
+          {% csrf_token %}
+          <div>
+              <label>FirstName:</label>
+                <h6>{{ form.firstName }}</h6>
+          </div>
+          <div>
+              <label>SecondName:</label>
+             <h6>{{ form.secondName }}</h6> 
+          </div>
+          <div>
+            <label>Email:</label>
+              <h6>{{ form.email }}</h6>
+          </div>
+          <div>
+              <label>Username:</label>
+             <h6>{{ form.username }}</h6> 
+          </div>
+          <div>
+              <label>Password1:</label>
+             <h6>{{ form.password1 }}</h6>
+             <small id="message">Password is <span id="strength"></span></small>
+          </div>
+          <div>
+              <label>Password2:</label>
+             <h6>{{ form.password2 }}</h6> 
+          </div>
+          <button type="submit" class="btn5">Create an account</button>
+        </form>
+        <div>Already have an account? <a href="{% url 'login' %}">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var pass = document.getElementById('id_password1')
+    var msg = document.getElementById('message')
+    var measure_strength = document.getElementById('strength')
+
+    pass.addEventListener('input', () => {
+      if (pass.value.length > 0){
+        msg.style.display = 'block';
+      }
+      else{
+        msg.style.display = 'none';
+      }
+      if (pass.value.length < 4){
+        measure_strength.innerHTML = 'weak';
+        pass.style.borderColor = "red"
+        msg.style.color = "red"
+      } 
+      else if (pass.value.length >= 4 && pass.value.length < 8){
+          measure_strength.innerHTML = 'medium';
+          pass.style.borderColor = "yellow"
+          msg.style.color = "yellow"
+      }
+      else if (pass.value.length >= 8){
+        measure_strength.innerHTML = 'strong';
+        pass.style.borderColor = "green"
+        msg.style.color = "green"
+      }
+    })
+  </script>
+
+</body>
+</html>
+  

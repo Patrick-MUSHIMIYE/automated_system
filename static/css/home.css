@@ -1,0 +1,11 @@
+.textv textarea{
+    height:40vh;
+    width:100%;
+}
+.btn6{
+    border: none;
+    height:5vh;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 20vh;
+}

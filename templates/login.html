@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <title>user login</title>
+    <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  </head>
+  <body>
+    <div class="signcontainer">
+      <div class="subcontainer">
+        <div class="cont">
+          <h1>Welcome</h1>
+          <div>
+            <h3>Log in</h3>
+            <form method="post" novalidate>
+              {% csrf_token %}
+              <div class="lgIn">
+                <label>Username</label>
+                <h6>{{ form.username }}</h6>
+              </div>
+              <div>
+                <label>Password</label>
+                <h6>{{ form.password }}</h6>
+              </div>
+              <button type="submit" class="btn6">Log in</button>
+            </form>
+          </div>
+          <div >
+            <div class="sgt">
+              Create a new account? <a href="{% url 'signup' %}">Sign up</a>
+            </div>
+          </div>
+        </div>
+  </body>
+</html>
