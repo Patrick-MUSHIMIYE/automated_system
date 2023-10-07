@@ -11,11 +11,10 @@ def home(request):
 def board(request):
     return render(request, 'board.html')
 
-
-
 def post_request(request):
     if request.method == 'POST':
-        message = request.POST.get('message', '')
-        Post.objects.create(message=message)
-        return redirect('login')  # 'success' should be the name of your success URL pattern
-    return HttpResponse("Invalid request method")  # Handle invalid request methods
+        message = request.POST.get('message', 'created_at')
+        user = request.user
+        Post.objects.create(user=user, message=message)
+        return redirect('login')  
+    return HttpResponse("Invalid request method")
