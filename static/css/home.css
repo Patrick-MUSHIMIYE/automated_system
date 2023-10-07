@@ -1,6 +1,7 @@
 .textv textarea{
-    height:40vh;
+    height: 25vh;
     width:100%;
+    background-color: #ddd9d9;
 }
 .btn6{
     border: none;
@@ -8,4 +9,9 @@
     cursor: pointer;
     margin-top: 15px;
     width: 20vh;
+}
+img {
+    height: 30vh;
+    width: 100%;
+    padding-top: 20px;
 }

@@ -1,6 +1,26 @@
 .xyz{
     text-align: center;
     justify-content: center;
-    margin-top: 20vh;
-    margin-bottom: 20px;
+}
+.xyz a{
+    font-size: 20px;
+    font-weight: bold;
+}
+.fac{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10 0 0 0;
+    
+}
+.fac select{
+    font-size: 17px;
+}
+img {
+    height: 30vh;
+    width: 100%;
+    padding-top: 20px;
+}
+h4 {
+    text-align: center;
+    font-size: 18px;
 }
