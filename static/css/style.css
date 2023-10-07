@@ -4,7 +4,7 @@
     display: flex;
     height: 100vh;
     width: 100%;
-    background-color:white
+    background-image: url(../img/moroccan-flower-dark.png)
 }
 h2{
     color:#0c0c0b;

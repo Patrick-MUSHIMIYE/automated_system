@@ -11,21 +11,24 @@
       <div class="signcontainer">
         <div class="subcontainer">
           <div class="cont">
-            <h3>Welcome to our automated system</h3>
+            <img src="{% static 'img/splash.png' %}" alt= "">
           </div>
-            <p>Choose who to receive your message</p>
+          <div>
+            <h4>You are on Board choose who do you want to receive you request</h4>
+          </div>
             <div class="xyz">
               <div>
                 <a href="{% url 'home' %}">Cs Team Lead</a>
-              </div>
               <div>
-              <label for="facilitator">Facilitators</label>
-              <select onchange="location = this.value;">
-                <option value="{% url 'home' %}">Isaac</option>
-                <option value="{% url 'home' %}">Simeon</option>
-                <option value="{% url 'home' %}">Thadee</option>
-                <option value="{% url 'home' %}">Robert</option>
-              </select>
+                <div class="fac">
+                  <label for="facilitator">Facilitators</label>
+                  <select onchange="location = this.value;">
+                    <option value="{% url 'home' %}">Isaac</option>
+                    <option value="{% url 'home' %}">Simeon</option>
+                    <option value="{% url 'home' %}">Thadee</option>
+                    <option value="{% url 'home' %}">Robert</option>
+                  </select>
+                </div>
               </div>
             </div>
         </div>
