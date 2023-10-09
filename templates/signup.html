@@ -41,22 +41,36 @@
         </form>
         <div>Already have an account? <a href="{% url 'login' %}">Log in</a>
         </div>
+        <div id="password-requirements">
+          <p>Your password must:</p>
+          <ul>
+            <li class="green">Contain at least 8 characters</li>
+            <li class="red">Not be too similar to your other personal information</li>
+            <li class="red">Not be a commonly used password</li>
+            <li class="red">Not be entirely numeric</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
   <script>
     var pass = document.getElementById('id_password1')
+    var pass2 = document.getElementById('id_password2')
     var msg = document.getElementById('message')
     var measure_strength = document.getElementById('strength')
+    var requirements = document.getElementById('password-requirements');
 
     pass.addEventListener('input', () => {
       if (pass.value.length > 0){
         msg.style.display = 'block';
+        requirements.style.display ='block'
       }
       else{
         msg.style.display = 'none';
+        requirements.style.display = 'none';
       }
+
       if (pass.value.length < 4){
         measure_strength.innerHTML = 'weak';
         pass.style.borderColor = "red"
@@ -73,6 +87,32 @@
         msg.style.color = "green"
       }
     })
+    pass2.addEventListener('input', () => {
+      if (pass2.value.length > 0){
+        requirements.style.display ='none'
+      }
+      else{
+        requirements.style.display ='block'
+      }
+    })
+    function checkPasswordStrength(password) {
+      // Reset styles and requirements
+      pass.style.borderColor = 'green';
+      msg.style.color = 'red';
+      requirements.style.display = 'block';
+
+      // Check password requirements
+      var lengthRequirement = password.length >= 8;
+      var similarityRequirement = !password.includes('your other personal information');
+      var commonRequirement = !isCommonPassword(password);
+      var numericRequirement = !/^\d+$/.test(password);
+
+      // Update styles and requirements
+      document.getElementById('length').style.color = lengthRequirement ? 'green' : 'red';
+      document.getElementById('similarity').style.color = similarityRequirement ? 'green' : 'red';
+      document.getElementById('common').style.color = commonRequirement ? 'green' : 'red';
+      document.getElementById('numeric').style.color = numericRequirement ? 'green' : 'red';
+    }
   </script>
 
 </body>

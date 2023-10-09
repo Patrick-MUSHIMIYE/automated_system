@@ -21,6 +21,12 @@
               </div>
               <button type="submit" class="btn6">Post</button>
             </form>
+            {% for message in messages %}
+            <script>
+                var message = '{{ message|escapejs }}';
+                window.alert(message);
+            </script>
+            {% endfor %}
           </div>
         </div>
         </div>
