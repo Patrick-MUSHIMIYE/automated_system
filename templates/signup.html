@@ -95,24 +95,6 @@
         requirements.style.display ='block'
       }
     })
-    function checkPasswordStrength(password) {
-      // Reset styles and requirements
-      pass.style.borderColor = 'green';
-      msg.style.color = 'red';
-      requirements.style.display = 'block';
-
-      // Check password requirements
-      var lengthRequirement = password.length >= 8;
-      var similarityRequirement = !password.includes('your other personal information');
-      var commonRequirement = !isCommonPassword(password);
-      var numericRequirement = !/^\d+$/.test(password);
-
-      // Update styles and requirements
-      document.getElementById('length').style.color = lengthRequirement ? 'green' : 'red';
-      document.getElementById('similarity').style.color = similarityRequirement ? 'green' : 'red';
-      document.getElementById('common').style.color = commonRequirement ? 'green' : 'red';
-      document.getElementById('numeric').style.color = numericRequirement ? 'green' : 'red';
-    }
   </script>
 
 </body>

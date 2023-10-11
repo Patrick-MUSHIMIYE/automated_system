@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     
     'student_inquiries',
     'accounts',
+    'facilitators'
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,24 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+# setting temporary
+
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True  # Adjust based on the requirements of your temporary email service
+EMAIL_HOST_USER = 'patchu@gmail.com'
+EMAIL_HOST_PASSWORD = 'Admin@1234'
+
+
+# the real method to set email
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your@gmail.com'  # Replace with your Gmail email address
+# EMAIL_HOST_PASSWORD = 'your_app_specific_password'  # Replace with your Gmail app-specific password

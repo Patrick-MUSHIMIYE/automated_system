@@ -19,6 +19,7 @@ from django.urls import path, re_path, include
 from student_inquiries import views
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
+from facilitators import views as fac_views
 import debug_toolbar
 
 # from django.conf import settings
@@ -30,10 +31,18 @@ urlpatterns = [
     re_path(r'^signup/$', accounts_views.signup, name='signup'),
     re_path(r'^$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     re_path(r'^home/$', views.home, name='home'),
+    re_path(r'^home2/$', fac_views.home2, name='home2'),
     re_path(r'^board/$', views.board, name='board'),
+    re_path(r'form/$', views.reply, name='reply'),
     re_path(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
-    
     re_path(r'^post/$', views.post_request, name='post_request'),
+    re_path(r'^fac_post/$', fac_views.fac_post, name='fac_post'),
+    re_path(r'^reply/$', views.reply_to_post, name='reply_to_post'),
+    
+    # re_path(r'^reply_to_post/$', views.reply_to_post, name='reply_to post'),
+    
+    # re_path(r'reply/$', reply_views.reply_form, name='post_reply'),
+    # re_path(r'^replies/$', reply_views.post_reply, name='replies'),
 
 ]
 
