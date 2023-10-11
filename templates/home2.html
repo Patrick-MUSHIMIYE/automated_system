@@ -12,9 +12,9 @@
           <div class="cont">
             <img src="{% static 'img/splash.png' %}" alt= "">
             <div>
-              <span>Type your request here</span>
+              <span>Send Request to facilitator</span>
             </div>
-            <form method="post" action="{% url 'post_request' %}">
+            <form method="post" action="{% url 'fac_post' %}">
               {% csrf_token %}
               <div class="textv">
                 <textarea name="message" rows="5"></textarea>
@@ -32,4 +32,3 @@
         </div>
     </body>
 </html>
-  

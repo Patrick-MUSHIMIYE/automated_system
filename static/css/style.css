@@ -30,7 +30,7 @@ input{
     margin-left: 10px;
 }
 .cont label{
-    margin-left:20px
+    margin-left:20px;
 }
 
 .cont h3{
@@ -57,3 +57,44 @@ input{
     display: none;
     text-align: center;
 }
+#password-requirements {
+    position: absolute;
+    top: 64vh;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 15vh;
+    width: 30vh;
+    height: 30vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  #password-requirements p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  #password-requirements ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  #password-requirements li {
+    margin-bottom: 8px;
+  }
+
+  #password-requirements li::before {
+    content: '\2022'; 
+    color: #28a745; /* Green color */
+  }
+
+  #password-requirements li.green {
+    color: #28a745;
+  }
+
+  #password-requirements li.red {
+    color: #dc3545;
+  }
